@@ -1,3 +1,15 @@
+# promela, spin
+
+ts
+leaders
+*.trail
+*.b
+*.c
+*.h
+*.m
+*.p
+*.t
+
 ### Haskell ###
 dist
 dist-*

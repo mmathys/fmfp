@@ -1,0 +1,19 @@
+function pow(a: Int, b: Int): Int
+  requires b >= 0;
+  requires a > 0;
+{
+  ( b == 0 ? 1 : a * pow(a,b-1) )
+}
+
+method exercise1(x: Int) returns (y: Int)
+  requires x >= 0
+  ensures y == pow(2, x)
+{
+  y := 1
+  var z : Int := 0
+
+  while(z < x) invariant z >= 0 && z <= x && y == pow(2, z) {
+    y := y * 2
+    z := z + 1
+  }
+}
